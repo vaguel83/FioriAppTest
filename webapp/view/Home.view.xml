@@ -1,7 +1,45 @@
-<mvc:View controllerName="btp.academy.fiorifirstapp.controller.Home"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+<mvc:View controllerName="btp.academy.fiorifirstapp.controller.Home" 
+xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" 
+xmlns="sap.m" 
+xmlns:layout="sap.ui.layout"
+xmlns:semantic="sap.f.semantic">
+    
+    <semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+        <semantic:titleHeading>
+            <Title text="{i18n>title}" />
+        </semantic:titleHeading>
+
+        <semantic:titleSnappedContent>
+            <Text text="Small Description" />
+        </semantic:titleSnappedContent>
+
+        <semantic:titleExpandedContent>
+            <Text text="Long Description" />
+        </semantic:titleExpandedContent>
+
+        <semantic:headerContent>
+            <layout:HorizontalLayout allowWrapping="true">
+                <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                    <ObjectAttribute title="Functional Area" text="{i18n>title}" />
+                    <ObjectAttribute title="Cost Center" text="test2" />
+                    <ObjectAttribute title="Email" text="test3" />
+                    <Button id="buttoncontent2" text="hello" type="Emphasized" press="onPress"/>
+                </layout:VerticalLayout>
+
+				<layout:VerticalLayout>
+					<ObjectAttribute title="Availability"/>
+					<ObjectStatus text="In Stock" state="Success" />
+				</layout:VerticalLayout>
+            </layout:HorizontalLayout>
+        </semantic:headerContent>
+
+
+        <semantic:content>
+            <Button id="buttoncontent1" text="hello" type="Emphasized" press="onPress"/>
+        </semantic:content>
+        <!-- <Page id="page" title="{i18n>title}">
         <content />
-    </Page>
+    </Page> -->
+    </semantic:SemanticPage>
 </mvc:View>
