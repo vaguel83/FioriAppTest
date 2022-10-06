@@ -12,7 +12,7 @@ sap.ui.define(
       onPress: function (evt) {
         // MessageToast.show(evt.getSource().getId() + " Toasty!!!");
 
-        MessageToast.show(evt.getParameter("id") + " Toasty!!!");
+        MessageToast.show(evt.getParameter("id") + " Toasty!!");
       },
     });
   }
