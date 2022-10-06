@@ -61,11 +61,18 @@
                             <BadgeCustomData key="badge" value="" visible="true" />
                         </customData>
                     </Button>
-                     <Button id="emailButton" class="sapUiTinyMarginBeginEnd" icon="sap-icon://accounting-document-verification" type="Default" text="Contact Person by e-mail">
+                    <Button id="emailButton" class="sapUiTinyMarginBeginEnd" icon="sap-icon://accounting-document-verification" type="Default" text="Contact Person by e-mail">
                         <customData>
                             <BadgeCustomData key="badge" value="" visible="true" />
                         </customData>
                     </Button>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Icon Button wow" subheader="Code" press="press">
+                        <TileContent>
+                            <ImageContent src="/model/code-flat.png" />
+                        </TileContent>
+                    </GenericTile>
+
                 </layout:VerticalLayout>
             </layout:HorizontalLayout>
         </semantic:content>
