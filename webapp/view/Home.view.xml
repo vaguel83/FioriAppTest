@@ -1,43 +1,88 @@
-<mvc:View controllerName="btp.academy.fiorifirstapp.controller.Home" 
-xmlns:mvc="sap.ui.core.mvc" 
-displayBlock="true" 
-xmlns="sap.m" 
-xmlns:layout="sap.ui.layout"
-xmlns:semantic="sap.f.semantic">
-    
-    <semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+<mvc:View controllerName="btp.academy.fiorifirstapp.controller.Home" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:semantic="sap.f.semantic">
+    <semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="true" headerExpanded="false">
         <semantic:titleHeading>
             <Title text="{i18n>title}" />
         </semantic:titleHeading>
 
         <semantic:titleSnappedContent>
-            <Text text="Small Description" />
+            <Text text="{i18n>smallDescription}" />
         </semantic:titleSnappedContent>
 
         <semantic:titleExpandedContent>
-            <Text text="Long Description" />
+            <Text text="{i18n>appDescription}" />
         </semantic:titleExpandedContent>
 
         <semantic:headerContent>
             <layout:HorizontalLayout allowWrapping="true">
                 <layout:VerticalLayout class="sapUiMediumMarginEnd">
-                    <ObjectAttribute title="Functional Area" text="{i18n>title}" />
-                    <ObjectAttribute title="Cost Center" text="test2" />
-                    <ObjectAttribute title="Email" text="test3" />
-                    <Button id="buttoncontent2" text="hello" type="Emphasized" press="onPress"/>
+                    <ObjectAttribute title="Functional Area" text="{i18n>functional_area}" />
+                    <ObjectAttribute title="Cost Center" text="{i18n>cost_center}" />
+                    <ObjectAttribute title="Email" text="{i18n>email}" />
                 </layout:VerticalLayout>
 
-				<layout:VerticalLayout>
-					<ObjectAttribute title="Availability"/>
-					<ObjectStatus text="In Stock" state="Success" />
-				</layout:VerticalLayout>
+                <layout:VerticalLayout>
+                    <ObjectAttribute title="Availability" />
+                    <ObjectStatus text="{i18n>availability}" state="Success" />
+                </layout:VerticalLayout>
             </layout:HorizontalLayout>
         </semantic:headerContent>
 
-
         <semantic:content>
-            <Button id="buttoncontent1" text="hello" type="Emphasized" press="onPress"/>
+            <layout:HorizontalLayout>
+                <layout:VerticalLayout class="sapUiContentPadding">
+                    <form:SimpleForm>
+                        <form:content>
+                            <Label text="Name" />
+                            <Input id="nameInput" value="" placeholder="Enter your name" />
+                            <Label text="Last Name" />
+                            <Input id="lastnameInput" value="" placeholder="Enter your last name" />
+                            <Label text="Address" />
+                            <Input id="addressInput" value="" placeholder="Enter your address" />
+                        </form:content>
+                    </form:SimpleForm>
+                </layout:VerticalLayout>
+
+                <layout:VerticalLayout class="sapUiContentPadding">
+                    <form:SimpleForm>
+                        <form:content>
+                            <Label text="Name" />
+                            <Text id="nameText" text="{/name}" />
+                            <Label text="Last Name" />
+                            <Text id="lastnameText" text="{/lastname}" />
+                            <Label text="Address" />
+                            <Text id="addressText" text="{/address}" />
+                        </form:content>
+                    </form:SimpleForm>
+                </layout:VerticalLayout>
+
+                <layout:VerticalLayout class="sapUiContentPadding">
+                    <Button id="telephoneButton" class="sapUiTinyMarginBeginEnd" icon="sap-icon://call" type="Default" text="Contact Person by Phone">
+                        <customData>
+                            <BadgeCustomData key="badge" value="" visible="true" />
+                        </customData>
+                    </Button>
+                     <Button id="emailButton" class="sapUiTinyMarginBeginEnd" icon="sap-icon://accounting-document-verification" type="Default" text="Contact Person by e-mail">
+                        <customData>
+                            <BadgeCustomData key="badge" value="" visible="true" />
+                        </customData>
+                    </Button>
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
         </semantic:content>
+
+        <!-- Semantic Footer Buttons -->
+        <semantic:positiveAction>
+            <semantic:PositiveAction id="submit_button" text="Submit" press="onPress" />
+        </semantic:positiveAction>
+
+        <semantic:negativeAction>
+            <semantic:NegativeAction id="clear_button" text="Clear" press="onPress" />
+        </semantic:negativeAction>
+
+        <semantic:footerCustomActions>
+            <!-- <Button id="submit_button" text="Submit"  press="onPress" /> -->
+        </semantic:footerCustomActions>
+
         <!-- <Page id="page" title="{i18n>title}">
         <content />
     </Page> -->
